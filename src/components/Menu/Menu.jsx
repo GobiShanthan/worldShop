@@ -15,7 +15,7 @@ const Menu = () => {
         <MenuLogo><Link to='/'>WorldShop</Link></MenuLogo>
         <MenuTabsContainer>
             <MenuTabs><Link to='/products'>Products</Link></MenuTabs>
-            <MenuTabs> <Link to='carts'>Carts</Link></MenuTabs>
+            <MenuTabs> <Link to='cart'>Carts</Link></MenuTabs>
         </MenuTabsContainer>
     </MenuContainer>
   )

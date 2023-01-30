@@ -34,7 +34,7 @@ const ProductPage = () => {
   const { products } = productsData;
 
   //PRICE
-  const price = pageData.maxRecipientDenomination
+  const price = pageData && pageData.maxRecipientDenomination
     ? pageData.maxRecipientDenomination.toFixed(2)
     : 100.0;
 
@@ -68,22 +68,24 @@ const ProductPage = () => {
     const newObj = Object.assign({ quantity }, pageData);
     dispatch(addToCart(newObj));
   };
-
+  
   return (
     <ProductPageWrapper>
-      <ProductPageContainer>
+      {pageData ?<ProductPageContainer>
+
         <PagePic src={pageData.img} alt={pageData.productName} />
         <PageInfo>
           <PageTitle>{pageData.productName}</PageTitle>
           <PagePrice>
-            <span>Price:</span> ${price.toFixed(2)}
+            <span>Price:</span> ${price}
           </PagePrice>
           <p>{pageData.description}</p>
           <QuantityComp quantity={quantity} quantityFunc={quantityFunc} />
           <PageTotalPrice>TOTAL: ${(price * quantity).toFixed(2)}</PageTotalPrice>
           <AddToCartButton onClick={addToCartFunc}>ADD TO CART</AddToCartButton>
         </PageInfo>
-      </ProductPageContainer>
+      </ProductPageContainer>:<h1>loading........</h1>}
+      
     </ProductPageWrapper>
   );
 };

@@ -16,7 +16,7 @@ import Home from "./pages/Home/Home";
 import ProductPage from './pages/ProductPage/ProductPage'
 import {Products} from "./pages/Products/Products";
 import { MenuContainer } from "./components/Menu/Menu.styled.jsx";
-import Product from "./components/Product/ProductCard.jsx";
+import Cart from './pages/Cart/Cart'
 
 
 export function App() {
@@ -26,6 +26,7 @@ export function App() {
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductPage />} />
+        <Route path='cart' element={<Cart/>}/>
       </Route>
     )
   );
