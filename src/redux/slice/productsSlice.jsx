@@ -1,30 +1,56 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice , createAsyncThunk} from '@reduxjs/toolkit'
+
 
 const initialState = {
-  products:[]
+  products:[],
+  productPage:[],
+  status:'',
+  errorMsg:''
 }
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    'X-API-KEY': process.env.REACT_APP_API_KEY
+  }
+};
+
+
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async()=>{
+  try{
+    const res = await fetch('https://api.chimoney.io/v0.2/info/assets', options)
+    const {data} = await res.json()
+    return data.giftCardsRLD
+  }catch(err){
+    return err.message
+  }
+})
 
 export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    increment: (state) => {
-    //   // Redux Toolkit allows us to write "mutating" logic in reducers. It
-    //   // doesn't actually mutate the state because it uses the Immer library,
-    //   // which detects changes to a "draft state" and produces a brand new
-    //   // immutable state based off those changes
-    //   state.value += 1
-    },
-    decrement: (state) => {
-    //   state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-    //   state.value += action.payload
-    },
-  },
+  },extraReducers(builder){
+    builder
+    .addCase(fetchProducts.pending,(state,action)=>{
+      state.status = 'loading'
+    })
+    .addCase(fetchProducts.fulfilled,(state,action)=>{
+      state.status = 'success'
+      state.products = action.payload
+    })
+    .addCase(fetchProducts.rejected,(state,action)=>{
+      state.status = 'failed'
+      state.errorMsg = action.payload
+    })
+  }
 })
 
+
+
+
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = productSlice.actions
+export const { getProductPage} = productSlice.actions
 
 export default productSlice.reducer

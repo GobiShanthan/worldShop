@@ -1,5 +1,7 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
+//STYLED COMPONENTS IMPORTS
 import {
   ProductCardContainer,
   ProductInfoContainer,
@@ -7,9 +9,14 @@ import {
   ProductTitle
 } from "./Product.styled";
 
-const Product = ({ info }) => {
+//REDUX IMPORTS
+import {addToCart} from '../../redux/slice/cartSlice'
 
+
+
+const Product = ({ info }) => {
   return (
+    <Link to={`/products/${info.productId}`}>
     <ProductCardContainer img={info.img}>
       <ProductInfoContainer>
       <ProductTitle>{info.name}</ProductTitle>
@@ -17,12 +24,9 @@ const Product = ({ info }) => {
       <p>
         {info.fixedRecipientDenominations[0]?`${info.recipientCurrencyCode} $${info.fixedRecipientDenominations[0].toFixed(2)}`:'Price N/A'}
       </p>
-      <p>
-        <ProductButton>Add to Cart</ProductButton>
-      </p>
       </ProductInfoContainer>
-
     </ProductCardContainer>
+    </Link>
   );
 };
 

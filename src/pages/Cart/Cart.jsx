@@ -1,8 +1,9 @@
 import React from 'react'
+import {CartContainer} from './Cart.styled'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <CartContainer>Cart</CartContainer>
   )
 }
 

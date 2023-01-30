@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {useDispatch,useSelector} from 'react-redux'
 
+//REDUX IMPORTS 
+import {fetchProducts} from '../../redux/slice/productsSlice'
 //IMPORTS
 import Product from "../Product/ProductCard";
 import Pagnate from "../Pagnate/Pagnate";
@@ -12,9 +15,13 @@ const {
 
 //MAIN FUNCTION
 const ProductsGrid = ({ data }) => {
-  //DATA
-  const productData = data.data.giftCardsRLD;
-  const { content } = productData;
+
+
+
+
+  const { content } = data
+
+
 
   //USESTATES
   const [count, setCount] = useState(1);
