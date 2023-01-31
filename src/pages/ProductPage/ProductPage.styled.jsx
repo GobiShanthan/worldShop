@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Mobile} from '../../responsive'
 
 export const ProductPageWrapper = styled.div`
 background:	#3b444b;
@@ -8,7 +9,13 @@ background:	#3b444b;
   width: 100%;
   padding:4%;
   gap:5%;
+
 `;
+
+export const Desc = styled.p`
+margin:20px;
+
+`
 
 export const ProductPageContainer = styled.div`
     display:flex;
@@ -18,6 +25,9 @@ export const ProductPageContainer = styled.div`
     background:white; 
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     flex:1;
+    ${Mobile({height:'85%',margin:'5%',position:'relative'})};
+    border-radius:20px;
+    
 `;
 
 export const PagePic = styled.img`
@@ -30,6 +40,8 @@ export const PagePic = styled.img`
 export const PageInfo =styled.div`
 display:flex;
 flex-direction: column;
+justify-content: center;
+text-align:center;
 align-items: center;
 gap:10px;
 
@@ -51,6 +63,8 @@ font-size:20px;
 font-weight:700;
 cursor:pointer;
 border-radius:10px; 
+
+${Mobile({position:'absolute',bottom:'30px'})};
 `
 
 export const PageTitle = styled.h1`

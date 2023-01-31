@@ -7,6 +7,7 @@ export const ProductPageContainer = styled.div`
     flex-wrap:wrap;
     justify-content:space-evenly;
     align-items:center;
+    background:	#3b444b;
 `
 
 

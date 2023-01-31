@@ -17,13 +17,14 @@ import ProductPage from './pages/ProductPage/ProductPage'
 import {Products} from "./pages/Products/Products";
 import { MenuContainer } from "./components/Menu/Menu.styled.jsx";
 import Cart from './pages/Cart/Cart'
+import Loader from "./components/Loader/Loader.jsx";
 
 
 export function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index element={<Home />} />
+        <Route index element={<Loader />} />
         <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductPage />} />
         <Route path='cart' element={<Cart/>}/>

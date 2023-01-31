@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Mobile} from '../../responsive'
 
 export const QuantityContainer =styled.div`
 display:flex;
@@ -23,6 +24,7 @@ border:none;
 font-size:20px;
 font-weight:700;
 cursor:pointer;
+${Mobile({height:'8vw',width:'8vw'})};
 `
 
 export const QuantityNumber =styled.h1`
@@ -37,4 +39,5 @@ padding:10px;
 border:none;
 font-size:20px;
 font-weight:700;
+${Mobile({height:'8vw',width:'8vw'})};
 `

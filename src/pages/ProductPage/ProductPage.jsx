@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import QuantityComp from "../../components/Quantity/QuantityComp";
+import Toast from '../../components/Toast/Toast'
 
 import {
   ProductPageWrapper,
@@ -13,15 +14,20 @@ import {
   AddToCartButton,
   PageTitle,
   PageTotalPrice,
+  Desc
 } from "./ProductPage.styled";
 
 //REDUX IMPORTS
 import { fetchProducts } from "../../redux/slice/productsSlice";
-import { addToCart, deleteFromCart } from "../../redux/slice/cartSlice";
+import { addToToast} from "../../redux/slice/toastSlice";
+import { addToCart} from "../../redux/slice/cartSlice";
+import Loader from "../../components/Loader/Loader";
 
 const ProductPage = () => {
   const [pageData, setPageData] = useState({});
   const [quantity, setQuantity] = useState(1);
+
+
 
   //PRODUCT PARAMS
   const { productId } = useParams();
@@ -63,28 +69,45 @@ const ProductPage = () => {
       }
     }
   };
-  //ADD TO CART
-  const addToCartFunc = () => {
+
+  const sendToast =()=>{
+    dispatch(addToToast({msg:`${pageData.productName} added to Cart`,success:true}))
+  }
+
+  const sendCartItem = ()=>{
     const newObj = Object.assign({ quantity }, pageData);
-    dispatch(addToCart(newObj));
+      dispatch(addToCart(newObj))
+  }
+
+  //ADD TO CART
+  const addToCartFunc =() => {
+    sendToast()
+    sendCartItem()
   };
+
+
+
+
+
   
   return (
     <ProductPageWrapper>
-      {pageData ?<ProductPageContainer>
 
+      <Toast />
+      {pageData.img ?<ProductPageContainer>
         <PagePic src={pageData.img} alt={pageData.productName} />
         <PageInfo>
           <PageTitle>{pageData.productName}</PageTitle>
           <PagePrice>
             <span>Price:</span> ${price}
           </PagePrice>
-          <p>{pageData.description}</p>
+          <Desc>{pageData.description}</Desc>
           <QuantityComp quantity={quantity} quantityFunc={quantityFunc} />
           <PageTotalPrice>TOTAL: ${(price * quantity).toFixed(2)}</PageTotalPrice>
           <AddToCartButton onClick={addToCartFunc}>ADD TO CART</AddToCartButton>
+          
         </PageInfo>
-      </ProductPageContainer>:<h1>loading........</h1>}
+      </ProductPageContainer>:<Loader/>}
       
     </ProductPageWrapper>
   );
