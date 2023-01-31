@@ -21,7 +21,7 @@ import {
   CheckoutButton
 } from "./Cart.styled";
 
-import { addToCart, deleteFromCart } from "../../redux/slice/cartSlice";
+import { addToCart, deleteFromCart,checkout } from "../../redux/slice/cartSlice";
 import { addToToast} from "../../redux/slice/toastSlice";
 import Toast from "../../components/Toast/Toast";
 import Loader from "../../components/Loader/Loader";
@@ -80,13 +80,17 @@ const Cart = () => {
     sendToast(`${itemInfo.productName} quantity changed to ${e.target.value}`,true);
   };
 
-
+  //DELETE FROM CART
   const deleteFromCartFunc =(itemInfo)=>{
     dispatch(deleteFromCart(itemInfo.productId))
     sendToast(`${itemInfo.productName} removed from cart`,false)
   }
 
 
+  //CHECKOUT FUNC
+  const checkoutFunc=()=>{
+    dispatch(checkout())
+  }
 
 
 
@@ -149,7 +153,7 @@ const Cart = () => {
             </CartSubWrapper>
             <hr style={{width:'100%'}}/>
             <CartSubWrapper>
-              <CheckoutButton><Link style={{color:'white',textDecoration:'none'}} to='/checkout'>CHECKOUT</Link></CheckoutButton>
+              <CheckoutButton onClick={()=>checkoutFunc()}><Link style={{color:'white',textDecoration:'none'}} to='/checkout'>CHECKOUT</Link></CheckoutButton>
             </CartSubWrapper>
            
 

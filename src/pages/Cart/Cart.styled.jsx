@@ -32,6 +32,8 @@ export const CartItemsContainer = styled.div`
   display: flex;
   flex: 5;
   height:100%;
+  width:100%;
+  max-width:80vw;
   flex-direction: column;
   gap: 2px;
   padding: 40px;

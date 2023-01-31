@@ -1,72 +1,108 @@
-# Getting Started with Create React App
+## Project Name 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+WORLD SHOP 
 
-In the project directory, you can run:
+An E-commerce cart that saves data to localstorage. Created By Gobi Shanthan, React-Project
 
-### `npm start`
+<h1 align="left"><a href="https:gobishanthan.dev" target="_blank" rel="noreferrer">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+👨‍💻 [My Portfolio](https://gobishanthan.dev/)
+## Project Screen Shot(s)
 
-### `npm test`
+#### Example:   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center" width="100%">
+<a href="https://imgur.com/QTqQPrx"><img src="https://i.imgur.com/QTqQPrx.png" title="source: imgur.com" /></a>
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center" width="100%">
+<a href="https://imgur.com/NpVloW2"><img src="https://i.imgur.com/NpVloW2.png" title="source: imgur.com" /></a>
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center" width="100%">
+<a href="https://imgur.com/Weaq3U8"><img src="https://i.imgur.com/Weaq3U8.png" title="source: imgur.com" /></a>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Example:  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-## Learn More
+Installation:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm install`  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To Run Test Suite:  
 
-### Code Splitting
+`npm test`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To Start Server:
 
-### Analyzing the Bundle Size
+`npm start`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To Visit App:
 
-### Making a Progressive Web App
+`localhost:3000/`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To Connect to Api:
+(add env to root)
+`env var = REACT_APP_API_KEY`
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`localhost:3000/`  
 
-### Deployment
+## Tech List
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  - Created with create-react-app
+  - react v18.2
+  - react-router-dom 6.4
+  - react-redux
+  - @reduxs/toolkit
+  - styled-components
+  - mui-icons
+  - dotenv
 
-### `npm run build` fails to minify
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# worldShop
-ReactCart
+  - api integration (@react-redux -createAsyncThunk)
+  - custom pagination
+  - custom toast message
+  - custom styling using styled-components
+  - custom loader
+  - custom quantity counter
+  - full localstorage integration for cart
+  - success page empties cart and redux
+  - mobile-responsive
+
+
+
+## Reflections
+  
+  
+  -  This was a great experiance becuase, this project taught me 	to better manage my time.
+  - Time is the biggest issue for me. I need more time to 	implement all the features i had in mind.
+
+
+## Optimizations
+  
+  
+  -  React Suspense to lazy load pics and components.
+  -  rtk query for requests (load initial state before app loads)
+  - custom pagination complete, but would love to add sort and 	filter, and find methods.
+  - Time is the biggest issue for me. I need more time to 	implement all the features i had in mind.
+
+
+## IceBox
+  
+  
+  - Animations
+  - Landing-Page
+  - localstorage with only id and quantity
+  - rtk queries 

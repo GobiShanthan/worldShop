@@ -30,7 +30,7 @@ const Menu = () => {
       </MenuLogo>
       <MenuTabsContainer>
         <MenuTabs>
-          <Link to="/products" style={{color:'white',textDecoration:'none'}}>Products</Link>
+          <Link to="/" style={{color:'white',textDecoration:'none'}}>Products</Link>
         </MenuTabs>
         <MenuTabs>
           {" "}
